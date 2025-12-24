@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Background from './components/Background/Background'
+import Programs_temp from './components/Programs_temp/Programs_temp'
 
 
 
@@ -10,7 +11,10 @@ const App = () => {
     <div>
       <Navbar/>
       <Background/>
-      {/* <Programs/> */}
+      <div className="container">
+          <Programs_temp/>
+      </div>
+      
     </div>
   )
 }
