@@ -10,7 +10,7 @@ import Finance_car_icon from '../../assets/Finance_car_icon.png'
 
 
 
-const Programs = () => {
+const Programs_temp = () => {
   return (
     <div className='programs'>
         <div className="program">
@@ -38,4 +38,4 @@ const Programs = () => {
   )
 }
 
-export default Programs
+export default Programs_temp
