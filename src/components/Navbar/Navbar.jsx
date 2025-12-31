@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.jpg'
+import { useState } from 'react'// did this based on chat , check video 
 
 const Navbar = () => {
 
@@ -14,7 +15,8 @@ const Navbar = () => {
     }, []);
 
     return (
-    <nav className={'container ${sticky? 'dark-nav' : ''} '}>
+    <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
+
          <img src={logo} alt="" className='logo'/>
          <ul>
             <li>Sell my car </li>
