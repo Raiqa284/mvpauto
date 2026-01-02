@@ -5,6 +5,7 @@ import Programs_temp from './components/Programs_temp/Programs_temp'
 import Title from './components/Title/Title'
 import About from './components/About/About'
 import Campus from './components/Campus/Campus' 
+import Testimonials from './components/Testimonials/Testimonials'
 
 
 
@@ -20,6 +21,10 @@ const App = () => {
           <About/>
           <Title subTitle='Gallery' title='Our Cars'/>
           <Campus/>
+             <Title subTitle='TESTIMONIALS' title='What Student Says'/>
+             <Testimonials/>
+
+
 
       </div>
       
