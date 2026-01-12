@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.jpg'
 import { useState } from 'react'// did this based on chat , check video 
+import { Link } from 'react-scroll'
 
 const Navbar = () => {
 
@@ -19,7 +20,9 @@ const Navbar = () => {
 
          <img src={logo} alt="" className='logo'/>
          <ul>
-            <li>Sell my car </li>
+            <li><Link to="hero" smooth={true} offset={0} duration={}>
+            Sell my car
+            </Link></li>
             <li>Buy a car</li>
             <li>Finance and services</li>
             <li>About</li>
