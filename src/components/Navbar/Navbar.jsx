@@ -20,10 +20,12 @@ const Navbar = () => {
 
          <img src={logo} alt="" className='logo'/>
          <ul>
-            <li><Link to="hero" smooth={true} offset={0} duration={}>
+            <li><Link to="hero" smooth={true} offset={0} duration={500}>
             Sell my car
             </Link></li>
-            <li>Buy a car</li>
+            <li><Link to="hero" smooth={true} offset={0} duration={500}>
+            Sell my car
+            >Buy a car</Link></li>
             <li>Finance and services</li>
             <li>About</li>
             <li>Testimonials</li>
