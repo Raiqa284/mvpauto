@@ -12,7 +12,7 @@ import Finance_car_icon from '../../assets/Finance_car_icon.png'
 
 const Programs_temp = () => {
   return (
-    <div className='programs'>
+    <div className='programs' id="">
         <div className="program">
             <img src={Buy_car} alt="" />
            <div className="caption">
