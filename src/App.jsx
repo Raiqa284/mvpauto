@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials/Testimonials'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/footer'
 import VideoPlayer from './components/VideoPlayer/VideoPlayer'
+// import UploadImages from './components/UploadImages/UploadImages'
 
 
 
@@ -34,6 +35,7 @@ const [playState, setPlayState] = useState(false);
              <Title subTitle='Contact Us' title='Get In Touch'/>
              <Contact/>
              <Footer/> 
+             {/* <UploadImages/>//this is for testing purposes */}
 
 
 
