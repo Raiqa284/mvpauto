@@ -1,45 +1,106 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.jpg'
 import menu_icon from '../../assets/menu-icon.png'
-import { useState } from 'react'// did this based on chat , check video 
-import { Link } from 'react-scroll'
+
+// For scrolling on the same page
+import { Link as ScrollLink } from 'react-scroll'
+
+// For page navigation
+import { Link as RouterLink } from 'react-router-dom'
 
 const Navbar = () => {
+  const [sticky, setSticky] = useState(false)
+  const [mobileMenu, setMobileMenu] = useState(false)
 
-
-    const [sticky, setSticky] = useState(false);
-
-    useEffect(()=>{
-        window.addEventListener('scroll', () => {
-            window.scrolly > 50 ? setSticky(true) : setSticky(false);
-    })
-    }, []);
-    const [mobileMenu, setMobileMenu]=useState(false);
-    const toggleMenu =()=>{
-      mobileMenu? setMobileMenu(false) : setMobileMenu(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 50 ? setSticky(true) : setSticky(false)
     }
 
-    return (
-    <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-         <img src={logo} alt="" className='logo'/>
-         <ul className={mobileMenu?'':'hide-mobile-menu'}>
-            <li><Link to="sell my car" smooth={true} offset={0} duration={500}>
+  const toggleMenu = () => {
+    setMobileMenu(!mobileMenu)
+  }
+
+  const closeMenu = () => {
+    setMobileMenu(false)
+  }
+
+  return (
+    <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
+      <img src={logo} alt="Logo" className='logo' />
+
+      <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
+        {/* ROUTED PAGES */}
+        <li>
+          <RouterLink to="/sell-car" onClick={closeMenu}>
             Sell my car
-            </Link></li>
-            <li><Link to="Buy a car" smooth={true} offset={0} duration={500}>
+          </RouterLink>
+        </li>
+
+        <li>
+          <RouterLink to="/buy-car" onClick={closeMenu}>
             Buy a car
-            </Link></li>
-            <li><Link to="finance and services" smooth={true} offset={0} duration={500}>Finance and services</Link></li>
-            <li><Link to="about" smooth={true} offset={0} duration={500}>About</Link></li>
-            <li><Link to="testimonials" smooth={true} offset={0} duration={500}>Testimonials</Link></li>
-            <li><Link to="contact" smooth={true} offset={0} duration= {500}
-              className='btn'>Contact us</Link></li>
-         </ul>
-         <img src={menu_icon} alt="" className='menu-icon' onClick={toggleMenu}/>
-        </nav>
-    )
+          </RouterLink>
+        </li>
+
+        <li>
+          <RouterLink to="/finance-car" onClick={closeMenu}>
+            Finance & services
+          </RouterLink>
+        </li>
+
+        {/* SCROLL SECTIONS */}
+        <li>
+          <ScrollLink
+            to="about"
+            smooth={true}
+            offset={-80}
+            duration={500}
+            onClick={closeMenu}
+          >
+            About
+          </ScrollLink>
+        </li>
+
+        <li>
+          <ScrollLink
+            to="testimonials"
+            smooth={true}
+            offset={-80}
+            duration={500}
+            onClick={closeMenu}
+          >
+            Testimonials
+          </ScrollLink>
+        </li>
+
+        <li>
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            offset={-80}
+            duration={500}
+            className='btn'
+            onClick={closeMenu}
+          >
+            Contact us
+          </ScrollLink>
+        </li>
+      </ul>
+
+      <img
+        src={menu_icon}
+        alt="Menu"
+        className='menu-icon'
+        onClick={toggleMenu}
+      />
+    </nav>
+  )
 }
 
 export default Navbar
