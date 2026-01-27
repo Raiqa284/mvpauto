@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from "react";
+import SellCarForm from "./SellCarForm";
+import "./Sell.css";
 
-const Sell = () => {
+function Sell() {
+  // state + handlers here
   return (
-    <div>Sell</div>
-  )
+    <div className="sell-page">
+      <h1>Sell Your Car</h1>
+      <SellCarForm />
+    </div>
+  );
 }
 
-export default Sell
+export default Sell;
+
+
