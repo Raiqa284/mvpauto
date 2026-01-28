@@ -13,7 +13,6 @@
 .contact-col h3{
     color: #000F38;
     font-weight: 500;
-    font-weight: 25;
     font-size: 25px;
     display: flex;
     align-items: center;
@@ -41,21 +40,35 @@
     margin-right: 10px;
 
 }
-.contact form input, .contact form textarea{
-    display: block;
-    width: 100%;
-    background: #EBECFE;
-    padding: 15px;
-    border: 0;
-    outline: 0;
-    margin-bottom: 15px;
-    margin-top: 5px;
-    resize: none;
+.contact-col h4 {
+    color: #000F38;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
-.contact-col span {
-    display: block;
-    margin: 20px; 
+
+.whatsapp-note {
+  margin: 15px 0 25px;
+  font-size: 0.9rem;
+  color: #555;
 }
+.contact .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 25px;
+    background-color: #000F38;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.contact .btn:hover {
+    background-color: #001a66;
+}
+
+
 /* --------media query-----------*/
 @media (max-width: 700px){
     .contact{

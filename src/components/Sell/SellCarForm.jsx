@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./SellCarForm.css";
 
 const SellCarForm = () => {
   const [step, setStep] = useState(1);
@@ -51,7 +52,7 @@ Phone: ${userData.phone}
 Location: ${userData.location}
     `;
 
-    const phoneNumber = "27XXXXXXXXX"; // <-- replace with YOUR WhatsApp number
+    const phoneNumber = "27659404673"; // <-- replace with YOUR WhatsApp number
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");

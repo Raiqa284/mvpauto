@@ -7,6 +7,8 @@ function Sell() {
   return (
     <div className="sell-page">
       <h1>Sell Your Car</h1>
+      <p>Note: You must have WhatsApp installed on your device in order for this form to be sent.Alternatively, you can contact us directly via phone or email.</p>
+
       <SellCarForm />
     </div>
   );
